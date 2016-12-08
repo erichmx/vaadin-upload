@@ -5,10 +5,10 @@ import {Component, Output, ElementRef, ChangeDetectorRef, enableProdMode} from '
   template: `
     <vaadin-upload [(files)]="files">Text content</vaadin-upload>
     <vaadin-upload id="structural">
-      <div class="drop-label">
+      <div slot="drop-label">
         <span *ngIf="visible">Content for drop-label</span>
       </div>
-      <div class="file-list">
+      <div slot="file-list">
         <span *ngIf="visible">Content for file-list</span>
       </div>
     </vaadin-upload>

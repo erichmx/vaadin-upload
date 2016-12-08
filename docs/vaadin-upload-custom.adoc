@@ -16,6 +16,7 @@ To override default styles you should use Polymer mixins.
 
 [source,html]
 ----
+<custom-style>
 <style is="custom-style">
    vaadin-upload {
      --primary-color: #396;
@@ -26,6 +27,7 @@ To override default styles you should use Polymer mixins.
      };
    }
  </style>
+ </custom-style>
  <vaadin-upload></vaadin-upload>
 ----
 
@@ -107,14 +109,16 @@ The following example shows how to modify them:
 [source,html]
 ----
 <vaadin-upload >
-  <div class="drop-label">
+  <div slot="drop-label">
     Drop your documents here.
   </div>
-  <div class="file-list">
+  <div slot="file-list">
     <ul>
-      <template is="dom-repeat" items="{{files}}" as="file">
-        <li>[[file.name]]: [[file.status]]
-      </template>
+      <dom-repeat>
+        <template is="dom-repeat" items="{{files}}" as="file">
+          <li>[[file.name]]: [[file.status]]
+        </template>
+      </dom-repeat>
     </ul>
   </div>
   <div>

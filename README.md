@@ -51,7 +51,7 @@
 -->
 ```html
 <vaadin-upload accept=".pdf">
-  <div class="drop-label">
+  <div slot="drop-label">
     <iron-icon icon="description"></iron-icon>
     Drop your favourite Novels here (PDF files only)
   </div>
